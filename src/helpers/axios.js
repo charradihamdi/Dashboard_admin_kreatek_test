@@ -4,18 +4,18 @@ import store from '../store';
 import { authConstants } from '../actions/constants';
 
 const token = window.localStorage.getItem('token');
-
+console.log(token,'1')
 const axiosIntance = axios.create({
     baseURL: api,
     headers: {
-        'Authorization': token ? `Bearer ${token}` : ''
+        'Authorization': token ? `${token}` : ''
     }
-});
+}); 
 
 axiosIntance.interceptors.request.use((req) => {
     const { auth } = store.getState();
     if(auth.token){
-        req.headers.Authorization = `Bearer ${auth.token}`;
+        req.headers.Authorization = `${auth.token}`;
     }
     return req;
 })

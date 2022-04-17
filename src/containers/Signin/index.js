@@ -10,7 +10,7 @@ import { Redirect } from 'react-router-dom';
 * @author
 * @function Signin
 **/
-
+ 
 const Signin = (props) => {
 
     const [email, setEmail] = useState('');
@@ -24,13 +24,10 @@ const Signin = (props) => {
 
 
     const userLogin = (e) => {
-
         e.preventDefault();
-
         const user = {
             email, password
         }
-
         dispatch(login(user));
     }
 
@@ -41,7 +38,7 @@ const Signin = (props) => {
     return (
         <Layout>
             <Container>
-                <Row style={{ marginTop: '50px' }}>
+                <Row style={{ marginTop: '5rem' }}>
                     <Col md={{span: 6, offset: 3}}>
                         <Form onSubmit={userLogin}>
                             <Input 

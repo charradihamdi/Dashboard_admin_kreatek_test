@@ -11,11 +11,13 @@ export const login = (user) => {
         const res = await axios.post(`/admin/signin`, {
             ...user
         });
-
+      
         if(res.status === 200){
             const { token, user } = res.data;
+           
             localStorage.setItem('token', token);
             localStorage.setItem('user', JSON.stringify(user));
+            console.log('user:',token)
             dispatch({
                 type: authConstants.LOGIN_SUCCESS,
                 payload: {

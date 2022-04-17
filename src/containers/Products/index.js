@@ -82,7 +82,7 @@ const Products = (props) => {
                   <td>{product.name}</td>
                   <td>{product.price}</td>
                   <td>{product.quantity}</td>
-                  <td>{product.category.name}</td>
+                  {/* <td>{product.category.name}</td> */}
                   <td>
                     <button onClick={() => showProductDetailsModal(product)}>
                       info
@@ -202,7 +202,7 @@ const Products = (props) => {
           </Col>
           <Col md="6">
             <label className="key">Category</label>
-            <p className="value">{productDetails.category.name}</p>
+            {/* <p className="value">{productDetails.category.name}</p> */}
           </Col>
         </Row>
         <Row>
@@ -217,7 +217,7 @@ const Products = (props) => {
             <div style={{ display: "flex" }}>
               {productDetails.productPictures.map((picture) => (
                 <div className="productImgContainer">
-                  <img src={picture.img} alt="" />
+                  <img src={`http://localhost:5000/public/${picture.img}`} alt="" />
                 </div>
               ))}
             </div>
