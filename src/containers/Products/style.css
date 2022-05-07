@@ -18,3 +18,41 @@
     max-height: 100%;
     object-fit: contain;
 }
+
+
+  
+  .mainContainer{
+    margin: auto;
+    width: 100%;
+    border: 3px solid rgb(65, 62, 62);
+    padding: 10px;
+    text-align:center;
+    display:flex;
+}
+
+  form{
+    display:inline-block; 
+    margin-left:auto; 
+    margin-right:auto; 
+    text-align:left; 
+}
+
+text2{
+    margin: auto;
+    width: 50%;
+    border: 3px solid rgb(65, 62, 62);
+    padding: 10px;
+    text-align:center;
+    display:block;
+}
+
+.divtext {
+    margin: auto;
+    width: 50%;
+    padding: 10px;
+    text-align:center;
+    display:block;
+
+
+}
+

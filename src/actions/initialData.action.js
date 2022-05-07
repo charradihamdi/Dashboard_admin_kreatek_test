@@ -6,9 +6,13 @@ import {
 } from "./constants";
 import axios from "../helpers/axios";
 
-export const getInitialData = () => {
+export const getInitialData = (client) => {
+  
+  
   return async (dispatch) => {
-    const res = await axios.post(`/initialdata`);
+   
+    const res = await axios.post(`/admin/initialdata`,{client});
+    console.log("client ",client)
     if (res.status === 200) {
       const { categories, products, orders } = res.data;
       dispatch({

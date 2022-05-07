@@ -16,8 +16,9 @@ const Signin = (props) => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [error, setError] = useState('');
+    const [gender,setGender]=useState('')
     const auth = useSelector(state => state.auth);
-
+   
     const dispatch = useDispatch();
 
     
@@ -35,8 +36,14 @@ const Signin = (props) => {
         return <Redirect to={`/`} />
     }
 
+    // const newLocal = <select name="gender"  placeholder='gender' value={gender} onChange={(e)=>setGender(e.target.value)}>
+    //     <option value="female">female</option>
+    //     <option value="male">male</option>
+        
+    // </select>;
+    console.log(gender)
     return (
-        <Layout>
+        <Layout >
             <Container>
                 <Row style={{ marginTop: '5rem' }}>
                     <Col md={{span: 6, offset: 3}}>
@@ -48,6 +55,7 @@ const Signin = (props) => {
                                 type="email"
                                 onChange={(e) => setEmail(e.target.value)}
                             />
+                         {/* {newLocal} */}
 
                             <Input 
                                 label="Password"

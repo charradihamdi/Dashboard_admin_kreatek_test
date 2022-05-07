@@ -20,6 +20,7 @@ const Signup = (props) => {
   const [error, setError] = useState("");
   const auth = useSelector((state) => state.auth);
   const user = useSelector((state) => state.user);
+  console.log('user auth',auth)
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -40,7 +41,6 @@ const Signup = (props) => {
       email,
       password,
     };
-
     dispatch(signup(user));
   };
 

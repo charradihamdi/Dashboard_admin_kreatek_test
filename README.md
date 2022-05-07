@@ -66,3 +66,9 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 ### `npm run build` fails to minify
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+
+app.use(cors())=> connecter lback end bl froont  -> axios (fetch data ) ->exec l api ili bch yjiblk par exmpl l produit (9ahwa) 
+axios = await axios.post('localhost:5000/9ahwa') 
+yahki m3a server bch ygolo a3tini ghwwa  exec(route)
+react -> ychof kol chy apk page fyha 'navbar fyha 2 input mt3 signin '  => ychof ili navbar apk whdha
+ wl signin wl up papk whdha

@@ -3,7 +3,7 @@ import axios from "../helpers/axios";
 
 export const login = (user) => {
 
-    console.log(user)
+
 
     return async (dispatch) => {
 
@@ -11,11 +11,12 @@ export const login = (user) => {
         const res = await axios.post(`/admin/signin`, {
             ...user
         });
+        
       
         if(res.status === 200){
             const { token, user } = res.data;
            
-            localStorage.setItem('token', token);
+            localStorage.setItem('token', token);//samira
             localStorage.setItem('user', JSON.stringify(user));
             console.log('user:',token)
             dispatch({
