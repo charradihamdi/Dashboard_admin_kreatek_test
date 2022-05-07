@@ -3,9 +3,7 @@ import Modal from '../../components/UI/Modal';
 import Layout from '../../components/Layout';
 import Input from '../../components/UI/Input';
 import { Container, Row, Col } from 'react-bootstrap';
-import linearCategories from '../../helpers/linearCategories';
 import { useSelector, useDispatch } from 'react-redux';
-import { createPage } from '../../actions';
 import data from "./client_info.json";   
 import "./pageTable.css"
 

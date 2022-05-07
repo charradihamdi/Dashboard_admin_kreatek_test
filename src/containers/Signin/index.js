@@ -36,12 +36,8 @@ const Signin = (props) => {
         return <Redirect to={`/`} />
     }
 
-    // const newLocal = <select name="gender"  placeholder='gender' value={gender} onChange={(e)=>setGender(e.target.value)}>
-    //     <option value="female">female</option>
-    //     <option value="male">male</option>
-        
-    // </select>;
-    console.log(gender)
+ 
+
     return (
         <Layout >
             <Container>
