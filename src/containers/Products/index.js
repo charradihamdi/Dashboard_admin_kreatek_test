@@ -44,14 +44,7 @@ const Products = (props) => {
     dispatch(addProduct(Form)).then(() => setShow(false));
   };
   const handleShow = () => setShow(true);
-  useEffect(() => {
-    dispatch(getProducts);
-  }, [product]);
-  const handleDelete = async (id) => {
-    await Axios.delete(`http://localhost:5000/api/product/${id}`).then(
-      dispatch(getProducts)
-    );
-  };
+
   const renderProducts = () => {
     return (
       <Table style={{ fontSize: 12 }} responsive="sm">
@@ -76,7 +69,13 @@ const Products = (props) => {
                   <td>{product.en_stock ? "in stock" : "not available"}</td>
 
                   <td>
-                    <button onClick={() => handleDelete(product._id)}>
+                    <button
+                      onClick={() => {
+                        Axios.delete(
+                          `http://localhost:5000/api/product/${product._id}`
+                        );
+                      }}
+                    >
                       del
                     </button>
                   </td>
@@ -132,68 +131,6 @@ const Products = (props) => {
     );
   };
 
-  const handleCloseProductDetailsModal = () => {
-    setProductDetailModal(false);
-  };
-
-  const showProductDetailsModal = (product) => {
-    setProductDetails(product);
-    setProductDetailModal(true);
-  };
-
-  const renderProductDetailsModal = () => {
-    if (!productDetails) {
-      return null;
-    }
-
-    return (
-      <Modal
-        show={productDetailModal}
-        handleClose={handleCloseProductDetailsModal}
-        modalTitle={"Product Details"}
-        size="lg"
-      >
-        <Row>
-          <Col md="6">
-            <label className="key">Name</label>
-            <p className="value">{productDetails.name}</p>
-          </Col>
-          <Col md="6">
-            <label className="key">Price</label>
-            <p className="value">{productDetails.price}</p>
-          </Col>
-        </Row>
-        <Row>
-          <Col md="6">
-            <label className="key">Quantity</label>
-            <p className="value">{productDetails.quantity}</p>
-          </Col>
-          <Col md="6">
-            <label className="key">Category</label>
-            <p className="value">{productDetails.category.name}</p>
-          </Col>
-        </Row>
-        <Row>
-          <Col md="12">
-            <label className="key">Description</label>
-            <p className="value">{productDetails.description}</p>
-          </Col>
-        </Row>
-        <Row>
-          <Col>
-            <label className="key">Product Pictures</label>
-            <div style={{ display: "flex" }}>
-              {productDetails.productPictures.map((picture) => (
-                <div className="productImgContainer">
-                  <img src={picture.img} alt="" />
-                </div>
-              ))}
-            </div>
-          </Col>
-        </Row>
-      </Modal>
-    );
-  };
   return (
     <Layout sidebar>
       <Container>
@@ -210,7 +147,6 @@ const Products = (props) => {
         </Row>
       </Container>
       {renderAddProductModal()}
-      {renderProductDetailsModal()}
     </Layout>
   );
 };
