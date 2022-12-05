@@ -13,20 +13,19 @@ import { useEffect } from "react";
  **/
 
 const Signup = (props) => {
-  const [firstName, setFirstName] = useState("");
+  const [FullName, setFullName] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const auth = useSelector((state) => state.auth);
   const user = useSelector((state) => state.user);
-  console.log('user auth',auth)
+  console.log("user auth", auth);
   const dispatch = useDispatch();
 
   useEffect(() => {
     if (!user.loading) {
-      setFirstName("");
-      setLastName("");
+      setFullName("");
       setEmail("");
       setPassword("");
     }
@@ -36,8 +35,7 @@ const Signup = (props) => {
     e.preventDefault();
 
     const user = {
-      firstName,
-      lastName,
+      FullName,
       email,
       password,
     };
@@ -56,26 +54,17 @@ const Signup = (props) => {
     <Layout>
       <Container>
         {user.message}
-        <Row style={{ marginTop: '5rem' }}>
+        <Row style={{ marginTop: "5rem" }}>
           <Col md={{ span: 6, offset: 3 }}>
             <Form onSubmit={userSignup}>
               <Row>
-                <Col md={6}>
+                <Col md={12}>
                   <Input
-                    label="First Name"
-                    placeholder="First Name"
-                    value={firstName}
+                    label="FullName"
+                    placeholder="FullName"
+                    value={FullName}
                     type="text"
-                    onChange={(e) => setFirstName(e.target.value)}
-                  />
-                </Col>
-                <Col md={6}>
-                  <Input
-                    label="Last Name"
-                    placeholder="Last Name"
-                    value={lastName}
-                    type="text"
-                    onChange={(e) => setLastName(e.target.value)}
+                    onChange={(e) => setFullName(e.target.value)}
                   />
                 </Col>
               </Row>

@@ -24,7 +24,7 @@
     "redux-thunk": "^2.3.0"
   },
   "scripts": {
-    "start": "set PORT=3000 && react-scripts start",
+    "start": "set PORT=4000 && react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
@@ -47,5 +47,5 @@
   "engines": {
     "node": "12.x"
   },
-  "proxy":"http://localhost:3000/products"
+  "proxy": "http://localhost:3000/products"
 }

@@ -1,9 +1,18 @@
 import { productConstants } from "../actions/constants";
 
 const initialState = {
-    products: []
+  products: [],
 };
 
 export default (state = initialState, action) => {
-    return state;
-}
+  switch (action.type) {
+    case productConstants.GET_ALL_PRODUCTS_SUCCESS:
+      state = {
+        ...state,
+        products: action.payload.products,
+      };
+      break;
+  }
+
+  return state;
+};
