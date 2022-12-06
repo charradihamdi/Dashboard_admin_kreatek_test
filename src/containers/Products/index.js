@@ -31,14 +31,14 @@ const Products = (props) => {
   const handleClose = () => {
     setShow(false);
   };
-
+  console.log("isstock", inStock, is_gift);
   const submitProductForm = () => {
     const Form = {
       posterId: auth.user._id,
       libelle: Libelle,
       prix_ttc: prix_ttc,
       en_stock: inStock,
-      is_gift: is_gift,
+      is_gift: is_gift ? 1 : 0,
     };
     console.log("form", Form);
     dispatch(addProduct(Form)).then(() => setShow(false));
@@ -113,7 +113,7 @@ const Products = (props) => {
             type="checkbox"
             value={inStock}
             placeholder={`inStock`}
-            onChange={(e) => setInStock(e.target.value)}
+            onChange={(e) => setInStock(!inStock)}
           />
           <label className="col-10 pb-3">inStock</label>
         </div>
@@ -123,7 +123,7 @@ const Products = (props) => {
             type="checkbox"
             value={is_gift}
             placeholder={`is_gift`}
-            onChange={(e) => setIsGift(e.target.value)}
+            onChange={(e) => setIsGift(!is_gift)}
           />
           <label className="col-10 pb-3">is_gift</label>
         </div>
