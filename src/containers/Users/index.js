@@ -82,8 +82,8 @@ const Users = (props) => {
     return (
       <Modal
         show={show}
-        handleClose={true}
-        modalTitle={"Add New Product"}
+        handleClose={handleClose}
+        modalTitle={"Add New user"}
         onSubmit={submitClientForm}
       >
         <Input
@@ -125,7 +125,7 @@ const Users = (props) => {
         <Row>
           <Col md={12}>
             <div style={{ display: "flex", justifyContent: "space-between" }}>
-              <h3>Products</h3>
+              <h3>Users</h3>
               <button onClick={handleShow}>Add</button>
             </div>
           </Col>

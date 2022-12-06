@@ -1,10 +1,7 @@
-
-
 # dependencies
 /node_modules
 /.pnp
 .pnp.js
-./flask/modelsML
-./flask/node_modules
+
 
 
